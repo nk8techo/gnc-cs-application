@@ -1,0 +1,3 @@
+SELECT tblConstructionSchedule.[Project Number], tblConstructionScheduleRealEstateData.[Site Number], quniRealEstateData.Para, quniRealEstateData.RE, quniRealEstateData.Project_Status, quniRealEstateData.[Projected Signed Date] AS [Projected Lease Signed Date] INTO tblRealEstateData IN 'N:\DATA\INFORM\C\Construction Schedule (Backend).MDB'
+FROM tblConstructionScheduleRealEstateData INNER JOIN (tblConstructionSchedule INNER JOIN quniRealEstateData ON tblConstructionSchedule.[Site Number] = quniRealEstateData.KK) ON (tblConstructionScheduleRealEstateData.[Site Number] = tblConstructionSchedule.[Site Number]) AND (tblConstructionScheduleRealEstateData.MaxOfOpen = tblConstructionSchedule.Open);
+

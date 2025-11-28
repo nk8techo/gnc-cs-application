@@ -1,0 +1,2 @@
+UPDATE (tblRealEstateData INNER JOIN tblConstructionSchedule ON tblRealEstateData.[Project Number] = tblConstructionSchedule.[Project Number]) LEFT JOIN tblLeaseStatus ON tblRealEstateData.Project_Status = tblLeaseStatus.[Lease Status] SET tblConstructionSchedule.[Lease Status] = [tblLeaseStatus].[Abbreviation], tblConstructionSchedule.[Lease Signed] = [tblRealEstateData].[Projected Lease Signed Date], tblConstructionSchedule.Paralegal = [tblRealEstateData].[Para], tblConstructionSchedule.Representative = [tblRealEstateData].[RE];
+

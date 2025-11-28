@@ -1,0 +1,4 @@
+SELECT qurReportingBase.[Project Number], qurReportingBase.[Corporate or Franchise], qurReportingBase.[CENTER NAME], qurReportingBase.[ADDRESS 1], qurReportingBase.CITY, qurReportingBase.ST, qurReportingBase.ZIP_CODE, qurReportingBase.[Project Manager], qurReportingBase.[Landlord Drawings Sent], qurReportingBase.[Landlord Drawings Approved], qurReportingBase.[Permits Sent], qurReportingBase.[Permits Completed], qurReportingBase.[Lease Signed], qurReportingBase.[Construction Started], qurReportingBase.[Construction Completed], qurReportingBase.Open, qurReportingBase.Contractor, qurReportingBase.[Sign Vendor], qurReportingBase.[Sign Comments], qurReportingBase.[Turnover Comments], qurReportingBase.[Sign Drawings Sent], qurReportingBase.[Sign Drawings Received]
+FROM qurReportingBase
+WHERE (((qurReportingBase.Open) Between [Starting Date:] And [Ending Date:]));
+

@@ -1,0 +1,2 @@
+UPDATE qurSalesAreaSquareFootageNotNull INNER JOIN tblSalesAreaSquareFootage ON qurSalesAreaSquareFootageNotNull.[Site Number] = tblSalesAreaSquareFootage.[Site Number] SET tblSalesAreaSquareFootage.[Site Number] = [qurSalesAreaSquareFootageNotNull].[Site Number], tblSalesAreaSquareFootage.[Sales Area Square Footage] = [qurSalesAreaSquareFootageNotNull].[Sales Area], tblSalesAreaSquareFootage.Source = "Construction Schedule";
+

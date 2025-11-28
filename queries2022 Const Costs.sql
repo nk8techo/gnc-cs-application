@@ -1,0 +1,5 @@
+SELECT qurReportingBase.[Project Number], qurReportingBase.[CENTER NAME], qurReportingBase.CITY, qurReportingBase.ST, qurReportingBase.[COMPANY NBR], qurReportingBase.Category, qurReportingBase.[Dead or Hold], qurReportingBase.[Space Condition], qurReportingBase.[Contact Sheet], qurReportingBase.[Lease Signed], qurReportingBase.[Permits Sent], qurReportingBase.[Permits Completed], tblContract.[Contract Date], qurReportingBase.Turnover, qurReportingBase.[Construction Started], qurReportingBase.[Construction Completed], qurReportingBase.Open, tblFinancials.[Real Estate Estimate Construction], tblContract.[Contract Amount], tblContract.[Change Order Total Amount], tblFinancials.[Real Estate Estimate Total], tblFinancials.[Final Cost]
+FROM (qurReportingBase LEFT JOIN tblFinancials ON qurReportingBase.[Project Number] = tblFinancials.[Project Number]) LEFT JOIN tblContract ON qurReportingBase.[Project Number] = tblContract.[Project Number]
+WHERE (((qurReportingBase.[COMPANY NBR])<>"23") AND ((qurReportingBase.Category)="N") AND ((qurReportingBase.Open)>#1/1/2022#))
+ORDER BY qurReportingBase.Open;
+

@@ -1,0 +1,4 @@
+SELECT qurReportingBase.[Project Number], qurReportingBase.[Corporate or Franchise], qurReportingBase.[CENTER NAME], qurReportingBase.ST, qurReportingBase.[Project Manager], qurReportingBase.Paralegal, qurReportingBase.Open, qurReportingBase.Contractor, tblContract.[Real Estate Allowance Memo Received], tblContract.[Cash Allowance Amount], tblContract.[Check Received], tblContract.[Amount Collected], tblContract.[Date Information Required] AS [Date Information Required One], tblContract.[Information Sent to Real Estate], Year([Open]) AS [Year], [Open]+45 AS [Date Information Required Two]
+FROM qurReportingBase INNER JOIN tblContract ON qurReportingBase.[Project Number] = tblContract.[Project Number]
+WHERE (((tblContract.[Cash Allowance Amount])>0) AND ((Year([Open]))=Year(Date())+1));
+
