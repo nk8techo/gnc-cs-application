@@ -1,0 +1,4 @@
+INSERT INTO tblUpload ( [Site Number], [Invoice Number], [Invoice Date], [Sent to AP], [Vendor Number], [Vendor Location], Entity, Account, [Sub-Unit], Amount, Tax, [Purchase Order Number], [Payment Type] )
+SELECT qurReportingBase.[Site Number], tblContract.[Change Order Five Invoice Number], tblContract.[Change Order Five Invoice Date], tblContract.[Change Order Five Sent to AP], tblContractorCardFile.[Vendor Number], "" AS [Vendor Location], IIf([Corporate or Franchise]="C","CST","FRN") AS Entity, IIf([Corporate or Franchise]="C",16470,14900) AS Account, IIf([Corporate or Franchise]="C",[Appropriation],Null) AS [Sub-Unit], Round([Change Order Five Amount],2) AS Amount, 0 AS Tax, "" AS [Purchase Order Number], "Change Order Five Payment" AS [Payment Type]
+FROM (qurReportingBase LEFT JOIN tblContract ON qurReportingBase.[Project Number] = tblContract.[Project Number]) LEFT JOIN tblContractorCardFile ON qurReportingBase.Contractor = tblContractorCardFile.Name;
+

@@ -1,0 +1,5 @@
+INSERT INTO tblStoreClosingTracker ( [CENTER NBR], [Site Number], [CENTER NAME], [ADDRESS 1], [ADDRESS 2], CITY, [County Name], State, ZIP_CODE, COUNTRY_NAME, [DMA Name], Location, DIVISION, DISTRICT, REGION, Entity )
+SELECT tblCoreSiteInformationPanel.[CENTER NBR], tblCoreSiteInformationPanel.[Site Number], tblCoreSiteInformationPanel.[CENTER NAME], tblCoreSiteInformationPanel.[ADDRESS 1], tblCoreSiteInformationPanel.[ADDRESS 2], tblCoreSiteInformationPanel.CITY, tblCoreSiteInformationPanel.[County Name], tblCoreSiteInformationPanel.State, tblCoreSiteInformationPanel.ZIP_CODE, tblCoreSiteInformationPanel.COUNTRY_NAME, tblCoreSiteInformationPanel.[DMA Name], tblCoreSiteInformationPanel.Location, tblCoreSiteInformationPanel.DIVISION, tblCoreSiteInformationPanel.DISTRICT, tblCoreSiteInformationPanel.REGION, tblCoreSiteInformationPanel.[Corporate Store or Franchise Store]
+FROM tblCoreSiteInformationPanel LEFT JOIN tblStoreClosingTracker ON tblCoreSiteInformationPanel.[CENTER NBR] = tblStoreClosingTracker.[CENTER NBR]
+WHERE (((tblStoreClosingTracker.[CENTER NBR]) Is Null));
+

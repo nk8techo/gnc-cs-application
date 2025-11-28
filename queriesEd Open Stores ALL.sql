@@ -1,0 +1,5 @@
+SELECT tblCoreSiteInformationPanel.[CENTER NBR], tblCoreSiteInformationPanel.[Corporate Store or Franchise Store], tblCoreSiteInformationPanel.STORE_TYPE, tblCoreSiteInformationPanel.[LOCATION TYPE], tblCoreSiteInformationPanel.DIVISION, tblCoreSiteInformationPanel.REGION, tblCoreSiteInformationPanel.[CENTER NAME], tblCoreSiteInformationPanel.[ADDRESS 1], tblCoreSiteInformationPanel.[ADDRESS 2], tblCoreSiteInformationPanel.CITY, tblCoreSiteInformationPanel.State, tblCoreSiteInformationPanel.ZIP_CODE, tblCoreSiteInformationPanel.[County Name], tblCoreSiteInformationPanel.Telephone, tblCoreSiteInformationPanel.[DATE OPENED], dbo_CENTER_ACCESS_VIEW.PRIMARY_DC, tblCoreSiteInformationPanel.Format
+FROM (tblCoreSiteInformationPanel INNER JOIN [CMF INFO] ON tblCoreSiteInformationPanel.[CENTER NBR] = [CMF INFO].[CENTER NBR]) INNER JOIN dbo_CENTER_ACCESS_VIEW ON [CMF INFO].[CENTER NBR] = dbo_CENTER_ACCESS_VIEW.CENTER_NBR
+WHERE (((tblCoreSiteInformationPanel.Status)="Open") AND ((tblCoreSiteInformationPanel.COUNTRY_NAME)="UNITED STATES" Or (tblCoreSiteInformationPanel.COUNTRY_NAME)="CANADA"))
+ORDER BY tblCoreSiteInformationPanel.[Corporate Store or Franchise Store];
+

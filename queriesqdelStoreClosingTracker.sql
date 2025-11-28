@@ -1,0 +1,3 @@
+DELETE tblCoreSiteInformationPanel.[CENTER NBR], tblCoreSiteInformationPanel.[Site Number], tblCoreSiteInformationPanel.[CENTER NAME], tblCoreSiteInformationPanel.[ADDRESS 1], tblCoreSiteInformationPanel.[ADDRESS 2], tblCoreSiteInformationPanel.CITY, tblCoreSiteInformationPanel.[County Name], tblCoreSiteInformationPanel.State, tblCoreSiteInformationPanel.ZIP_CODE, tblCoreSiteInformationPanel.COUNTRY_NAME, tblCoreSiteInformationPanel.[DMA Name], tblCoreSiteInformationPanel.Location, tblCoreSiteInformationPanel.DIVISION, tblCoreSiteInformationPanel.DISTRICT, tblCoreSiteInformationPanel.REGION, tblCoreSiteInformationPanel.[Corporate Store or Franchise Store]
+FROM tblCoreSiteInformationPanel;
+
