@@ -1,0 +1,4 @@
+SELECT qurReportingBase.[Project Number], qurReportingBase.DIVISION, qurReportingBase.[Corporate or Franchise], qurReportingBase.[CENTER NAME], qurReportingBase.CITY, qurReportingBase.ST, qurReportingBase.Location, qurReportingBase.Category, qurReportingBase.[Project Manager], qurReportingBase.[Store Planner], qurReportingBase.Open, qurReportingBase.Appropriation, Nz([Application Two Amount])+Nz([Change Order Total Amount]) AS [Application Two Amount and Change Order Total Amount]
+FROM qurReportingBase INNER JOIN tblContract ON qurReportingBase.[Project Number] = tblContract.[Project Number]
+WHERE (((qurReportingBase.[Corporate or Franchise])="C") AND ((qurReportingBase.Open)<=DateSerial(Year(Date()),Month(Date()),0)) AND ((tblContract.[Contract Amount])>0) AND ((tblContract.[Application Two Complete])=False));
+

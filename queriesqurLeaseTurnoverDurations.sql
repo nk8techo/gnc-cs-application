@@ -1,0 +1,4 @@
+SELECT qurReportingBase.[Project Number], qurReportingBase.DIVISION, qurReportingBase.[Corporate or Franchise], qurReportingBase.[CENTER NAME], qurReportingBase.CITY, qurReportingBase.ST, qurReportingBase.Location, qurReportingBase.Category, qurReportingBase.[Project Manager], qurReportingBase.[Store Planner], qurReportingBase.[Lease Signed], qurReportingBase.Turnover, [Turnover]-[Lease Signed] AS [Lease Signed to Turnover Duration], qurReportingBase.[Lease Status], qurReportingBase.Open, [Open]-[Turnover] AS [Turnover to Open Duration], qurReportingBase.[Actual Turnover], qurReportingBase.[Verified Turnover], qurReportingBase.[Turnover Days], qurReportingBase.[Rent Start], qurReportingBase.[Actual Hard Rent]
+FROM qurReportingBase
+WHERE (((qurReportingBase.Category)="N" Or (qurReportingBase.Category)="R") AND ((qurReportingBase.Open)>=Date()));
+
