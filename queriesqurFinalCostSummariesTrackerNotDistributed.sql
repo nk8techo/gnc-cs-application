@@ -1,0 +1,4 @@
+SELECT qurReportingBase.[Project Number], qurReportingBase.DIVISION, qurReportingBase.[Corporate or Franchise], qurReportingBase.[CENTER NAME], qurReportingBase.CITY, qurReportingBase.ST, qurReportingBase.Location, qurReportingBase.Category, qurReportingBase.[Project Manager], qurReportingBase.[Store Planner], qurReportingBase.Open, tblFinancials.Distributed, IIf([Corporate or Franchise]="C",[Final Cost Due],([Final Cost Due]-15)) AS [Actual Final Cost Due]
+FROM qurReportingBase LEFT JOIN tblFinancials ON qurReportingBase.[Project Number] = tblFinancials.[Project Number]
+WHERE (((tblFinancials.Distributed)=False) AND ((IIf([Corporate or Franchise]="C",[Final Cost Due],([Final Cost Due]-15)))<=Date()+45) AND ((qurReportingBase.[Project Status])="A") AND ((tblFinancials.[Final Cost]) Is Null));
+

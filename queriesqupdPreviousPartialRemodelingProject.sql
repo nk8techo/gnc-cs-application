@@ -1,0 +1,2 @@
+UPDATE tblPreviousRemodelingProject INNER JOIN tblPreviousPartialRemodelingProject ON tblPreviousRemodelingProject.[Site Number] = tblPreviousPartialRemodelingProject.[Site Number] SET tblPreviousRemodelingProject.[Site Number] = [tblPreviousPartialRemodelingProject].[Site Number], tblPreviousRemodelingProject.[Previous Partial Remodeling Project] = [tblPreviousPartialRemodelingProject].[MaxOfOpen];
+

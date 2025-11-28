@@ -1,0 +1,5 @@
+SELECT qurReportingBase.Contractor, Count(qurReportingBase.[Site Number]) AS [CountOfSite Number], FormatCurrency(Sum(Nz([Contract Amount]))) AS [Contract Total], FormatCurrency(Sum(Nz([Change Order One Amount])+Nz([Change Order Two Amount])+Nz([Change Order Three Amount])+Nz([Change Order Four Amount])+Nz([Change Order Five Amount])+Nz([Change Order Six Amount])+Nz([Change Order Seven Amount])+Nz([Change Order Eight Amount])+Nz([Change Order Nine Amount])+Nz([Change Order Ten Amount])+Nz([Change Order Eleven Amount])+Nz([Change Order Twelve Amount])+Nz([Change Order Thirteen Amount])+Nz([Change Order Fourteen Amount])+Nz([Change Order Fifteen Amount]))) AS [Change Order Total], FormatPercent(IIf([Contract Total]=0,0,[Change Order Total]/[Contract Total])) AS [Change Order Percent]
+FROM qurReportingBase INNER JOIN tblContract ON qurReportingBase.[Project Number] = tblContract.[Project Number]
+WHERE (((qurReportingBase.[Project Status])="A") AND ((qurReportingBase.Open) Between [Enter Start Date:] And [Enter End Date:]))
+GROUP BY qurReportingBase.Contractor;
+

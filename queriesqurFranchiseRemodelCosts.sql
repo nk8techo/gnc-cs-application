@@ -1,0 +1,4 @@
+SELECT qurReportingBase.[Site Number], tblFinancials.[Fixture Cost], tblFinancials.[Signage Cost], tblFinancials.[Freight Cost], tblCoreSiteInformationPanel.[Previous Partial Remodeling Project], tblCoreSiteInformationPanel.[Previous Full Remodeling Project]
+FROM (qurReportingBase INNER JOIN tblFinancials ON qurReportingBase.[Project Number] = tblFinancials.[Project Number]) INNER JOIN tblCoreSiteInformationPanel ON qurReportingBase.[Site Number] = tblCoreSiteInformationPanel.[CENTER NBR]
+WHERE (((qurReportingBase.[Site Number])=[Enter Site One] Or (qurReportingBase.[Site Number])=[Enter Site Two] Or (qurReportingBase.[Site Number])=[Enter Site Three] Or (qurReportingBase.[Site Number])=[Enter Site Four] Or (qurReportingBase.[Site Number])=[Enter Site Five] Or (qurReportingBase.[Site Number])=[Enter Site Six] Or (qurReportingBase.[Site Number])=[Enter Site Seven] Or (qurReportingBase.[Site Number])=[Enter Site Eight]));
+
