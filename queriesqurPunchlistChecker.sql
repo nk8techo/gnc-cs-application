@@ -1,0 +1,4 @@
+SELECT qurReportingBase.[Project Number], qurReportingBase.DIVISION, qurReportingBase.[Corporate or Franchise], qurReportingBase.[CENTER NAME], qurReportingBase.CITY, qurReportingBase.ST, qurReportingBase.Location, qurReportingBase.Category, qurReportingBase.[Project Manager], qurReportingBase.[Store Planner], qurReportingBase.Open, qurReportingBase.Contractor, tblPunchlist.[Final Closeout Letter Sent], tblPunchlist.[Punchlist Filled Out Date], tblPunchlist.[Superintendent Overall Evaluation], Date()-[Open] AS [Punchlist Days]
+FROM qurReportingBase INNER JOIN tblPunchlist ON qurReportingBase.[Project Number] = tblPunchlist.[Project Number]
+WHERE (((qurReportingBase.[Project Manager])<>"RJ" And (qurReportingBase.[Project Manager])<>"RR") AND ((qurReportingBase.Open) Between #1/1/2007# And Date()) AND ((qurReportingBase.[Project Status])="A") AND ((tblPunchlist.[Punchlist Completed 'Done' Date]) Is Null));
+

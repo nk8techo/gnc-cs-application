@@ -1,0 +1,4 @@
+SELECT qurReportingBase.[Project Number], qurReportingBase.DIVISION, qurReportingBase.[Corporate or Franchise], qurReportingBase.[CENTER NAME], qurReportingBase.CITY, qurReportingBase.ST, qurReportingBase.Location, qurReportingBase.Category, qurReportingBase.[Project Manager], qurReportingBase.[Store Planner], qurReportingBase.[Fixture Relocation], qurReportingBase.[Sales Area], [Footage]-[Sales Area] AS Backroom, qurReportingBase.[Construction Started], qurReportingBase.Open, qurReportingBase.[Flooring Type to Use], qurReportingBase.[Space Condition], qurReportingBase.[Flooring Vendor]
+FROM qurReportingBase
+WHERE (((qurReportingBase.Category)="C" Or (qurReportingBase.Category)="N" Or (qurReportingBase.Category)="R") AND ((qurReportingBase.Open) Between Date()-15 And Date()+180) AND ((qurReportingBase.[Flooring Vendor])="MH"));
+

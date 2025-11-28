@@ -1,0 +1,3 @@
+SELECT CStr([Division]) AS DivisonText, CStr([Region]) AS RegionText, [tbl_RSD Information].DivAndRegion, [tbl_RSD Information].[RSD Name], [tbl_RSD Information].Address, [tbl_RSD Information].City, [tbl_RSD Information].State, [tbl_RSD Information].[Zip Code], [tbl_RSD Information].[Home Phone Number], [tbl_RSD Information].[Fax Number], [tbl_RSD Information].[Office Phone Number], [tbl_RSD Information].[Cell Phone Number], [tbl_RSD Information].[E-Mail Address], [tbl_RSD Information].[Corporate Credit Card], [tbl_RSD Information].[Petty Cash], [tbl_RSD Information].[Amount of Petty Cash], [tbl_RSD Information].[Calling Card], [tbl_RSD Information].Title, [tbl_RSD Information].[License Exp], [tbl_RSD Information].District
+FROM [tbl_RSD Information];
+

@@ -1,0 +1,4 @@
+SELECT tblCoreSiteInformationPanel.[CENTER NBR], tblCoreSiteInformationPanel.DIVISION, tblCoreSiteInformationPanel.REGION, tblCoreSiteInformationPanel.[COMPANY NBR], tblCoreSiteInformationPanel.[CENTER NAME], tblCoreSiteInformationPanel.[ADDRESS 1], tblCoreSiteInformationPanel.[ADDRESS 2], tblCoreSiteInformationPanel.CITY, tblCoreSiteInformationPanel.State, tblCoreSiteInformationPanel.ZIP_CODE, tblCoreSiteInformationPanel.Telephone, tblCoreSiteInformationPanel.Location, tblCoreSiteInformationPanel.Format, tblCoreSiteInformationPanel.[SQUARE FOOTAGE], tblCoreSiteInformationPanel.[DATE OPENED], tbl_Stores_Master.EXPIRATION AS [Lease Expiration]
+FROM tblCoreSiteInformationPanel LEFT JOIN tbl_Stores_Master ON tblCoreSiteInformationPanel.[CENTER NBR] = tbl_Stores_Master.[CENTER NBR]
+WHERE (((IIf([COMPANY NBR]="23" Or [COMPANY NBR]="70","F","C"))=[Choose "C" or "F"; Separate by tabs in Excel]));
+

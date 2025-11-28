@@ -1,0 +1,3 @@
+SELECT qurRealEstateDashboardInvSumTotal.STORE_TYPE, qurRealEstateDashboardInvSumTotal.StoreCount
+FROM qurRealEstateDashboardInvSumTotal;
+

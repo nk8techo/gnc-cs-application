@@ -1,0 +1,5 @@
+SELECT qurReportingBase.[Site Number], qurReportingBase.[Project Number], qurReportingBase.DIVISION, qurReportingBase.[Corporate or Franchise], qurReportingBase.[CENTER NAME], qurReportingBase.CITY, qurReportingBase.ST, qurReportingBase.Location, qurReportingBase.Category, qurReportingBase.[Project Manager], qurReportingBase.[Store Planner], qurReportingBase.Open, Sum(tblCADDTime.[Total Time]) AS [SumOfTotal Time], Sum(tblCADDTime.[Total Cost]) AS [SumOfTotal Cost]
+FROM tblCADDTime LEFT JOIN qurReportingBase ON tblCADDTime.[Project Number] = qurReportingBase.[Project Number]
+GROUP BY qurReportingBase.[Site Number], qurReportingBase.[Project Number], qurReportingBase.DIVISION, qurReportingBase.[Corporate or Franchise], qurReportingBase.[CENTER NAME], qurReportingBase.CITY, qurReportingBase.ST, qurReportingBase.Location, qurReportingBase.Category, qurReportingBase.[Project Manager], qurReportingBase.[Store Planner], qurReportingBase.Open
+HAVING (((qurReportingBase.Open) Between [Enter Start Date] And [Enter End Date]));
+

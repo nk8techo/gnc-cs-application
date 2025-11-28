@@ -1,0 +1,3 @@
+SELECT qurNewStorePipelineCurrentYearProjectedCorporateStepThree.Q1, qurNewStorePipelineCurrentYearProjectedCorporateStepThree.Q2, qurNewStorePipelineCurrentYearProjectedCorporateStepThree.Q3, qurNewStorePipelineCurrentYearProjectedCorporateStepThree.Q4, [Q1]+[Q2]+[Q3]+[Q4] AS Total
+FROM qurNewStorePipelineCurrentYearProjectedCorporateStepThree;
+

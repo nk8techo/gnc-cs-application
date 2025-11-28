@@ -1,0 +1,3 @@
+SELECT qurRealEstateDashboardNewCanadaActual_1.[CountOfSite Number]
+FROM qurRealEstateDashboardNewCanadaActual AS qurRealEstateDashboardNewCanadaActual_1;
+

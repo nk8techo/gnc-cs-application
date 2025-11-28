@@ -1,0 +1,4 @@
+SELECT qurReportingBase.[Project Number], qurReportingBase.DIVISION, qurReportingBase.[Corporate or Franchise], qurReportingBase.[CENTER NAME], qurReportingBase.CITY, qurReportingBase.ST, qurReportingBase.Location, qurReportingBase.[Project Manager], qurReportingBase.[Store Planner], qurReportingBase.[Lease Status], qurReportingBase.[MP Completed], qurReportingBase.[Actual Projected Permits Completed], qurReportingBase.[Projected Permits Completed], qurReportingBase.[Permits Completed], qurReportingBase.Turnover, qurReportingBase.[Actual Turnover], qurReportingBase.[Turnover Based on Permits Completed], qurReportingBase.Open
+FROM qurReportingBase
+WHERE (((qurReportingBase.Open) Between [Starting Date:] And [Ending Date:]) AND ((qurReportingBase.[Project Status])="A") AND ((qurReportingBase.Category)="N"));
+

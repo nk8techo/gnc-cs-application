@@ -1,0 +1,4 @@
+SELECT qurReportingBase.[Project Number], qurReportingBase.[Space Condition], qurReportingBase.Category, qurReportingBase.Open, qurReportingBase.[Location Description], qurReportingBase.[SQUARE FOOTAGE], tblFinancials.[Final Cost], tblFinancials.[Pre-Construction Cost], tblFinancials.[Signage Cost], tblFinancials.[Fixture Cost], tblFinancials.[Lighting Cost], tblFinancials.[Flooring Cost], tblFinancials.[Miscellaneous Cost], tblFinancials.[Construction Cost], tblFinancials.[Graphic Cost], tblFinancials.[Freight Cost], qurReportingBase.[Project Manager], qurReportingBase.[CENTER NAME], qurReportingBase.CITY, qurReportingBase.ST
+FROM tblFinancials LEFT JOIN qurReportingBase ON tblFinancials.[Project Number] = qurReportingBase.[Project Number]
+WHERE (((qurReportingBase.Category)="N" Or (qurReportingBase.Category)="R" Or (qurReportingBase.Category)="C") AND ((qurReportingBase.Open) Between #1/1/2012# And #12/31/2017#));
+

@@ -1,0 +1,5 @@
+SELECT qurReportingBase.[Project Number], qurReportingBase.DIVISION, qurReportingBase.[Corporate or Franchise], qurReportingBase.[CENTER NAME], qurReportingBase.CITY, qurReportingBase.ST, qurReportingBase.Location, qurReportingBase.Category, qurReportingBase.[Project Manager], qurReportingBase.[Store Planner], qurReportingBase.Open, qurReportingBase.[Contact Sheet], IIf([Blockouts Received]>=[HVAC Plan Received] And [Blockouts Received]>=[Survey Received],[Blockouts Received],IIf([HVAC Plan Received]>=[Survey Received],[HVAC Plan Received],[Survey Received])) AS [Blockouts, HVAC Plan, and Survey], [Blockouts, HVAC Plan, and Survey]-[Contact Sheet] AS Duration
+FROM qurReportingBase
+WHERE (((qurReportingBase.[Store Planner])=[Store Planner:]) AND ((qurReportingBase.Open) Between [Starting Date:] And [Ending Date:]) AND ((IIf([Blockouts Received]>=[HVAC Plan Received] And [Blockouts Received]>=[Survey Received],[Blockouts Received],IIf([HVAC Plan Received]>=[Survey Received],[HVAC Plan Received],[Survey Received])))>#1/1/2001#) AND ((qurReportingBase.[Project Status])="A"))
+ORDER BY qurReportingBase.Open, qurReportingBase.[Site Number];
+

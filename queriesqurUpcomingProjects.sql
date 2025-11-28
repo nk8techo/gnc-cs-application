@@ -1,0 +1,4 @@
+SELECT tblConstructionSchedule.[Project Number], qurReportingBase.DIVISION, qurReportingBase.REGION, qurReportingBase.[Corporate or Franchise], qurReportingBase.[CENTER NAME], qurReportingBase.CITY, qurReportingBase.ST, qurReportingBase.[LOCATION TYPE], tblConstructionSchedule.Category, qurReportingBase.[SQUARE FOOTAGE], tblConstructionSchedule.[Project Manager], tblConstruction.[Construction Completed], tblConstruction.[Merchandising Started], tblConstructionSchedule.Open, tblConstructionSchedule.[Actual Open]
+FROM (tblConstructionSchedule LEFT JOIN qurReportingBase ON tblConstructionSchedule.[Project Number] = qurReportingBase.[Project Number]) LEFT JOIN tblConstruction ON qurReportingBase.[Project Number] = tblConstruction.[Project Number]
+WHERE (((tblConstructionSchedule.Open) Between [Enter start date:] And [Enter end date:]));
+

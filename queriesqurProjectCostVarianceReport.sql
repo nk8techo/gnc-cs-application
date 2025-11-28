@@ -1,0 +1,4 @@
+SELECT qurReportingBase.[project manager], qurReportingBase.open, qurReportingBase.[Site number], [Location] & "-" & [category] AS type, tblFinancials.[Real Estate Estimate Total], tblFinancials.[Final Cost], ([Final Cost]-[Real Estate Estimate Total])/[Real Estate Estimate Total] AS Variance, Abs(([Final Cost]-[Real Estate Estimate Total]))/Abs([Real Estate Estimate Total]) AS [Absolute], tblFinancials.[Financials Comments]
+FROM qurReportingBase INNER JOIN tblFinancials ON qurReportingBase.[Project Number] = tblFinancials.[Project Number]
+WHERE (((qurReportingBase.[project manager]) Like [Enter PM Initials or Enter for all:] & "*") AND ((qurReportingBase.open) Between [Enter Start Date:] And [Enter End Date:]) AND ((tblFinancials.[Final Cost]) Is Not Null) AND ((qurReportingBase.[project status])="a") AND ((qurReportingBase.Category)<>"P"));
+
